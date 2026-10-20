@@ -1,0 +1,51 @@
+<section class="use-cases-section">
+  <div class="container">
+    <div class="use-cases-header">
+      <h2 class="section-title">{{ section.settings.title | default: "CHAQUE OBJET A SON IMPORTANCE." }}</h2>
+    </div>
+    <div class="use-cases-grid">
+      {% for block in section.blocks %}
+        <div class="use-case-card">
+          <div class="use-case-image">
+            {% if block.settings.image != blank %}
+              {{ block.settings.image | image_url: width: 600 | image_tag: alt: block.settings.title | escape }}
+            {% else %}
+              <img src="https://images.unsplash.com/photo-1556742049-0cf14f605063?q=80&w=600&auto=format&fit=crop" alt="Lifestyle" width="600" height="400">
+            {% endif %}
+          </div>
+          <div class="use-case-body">
+            <h3>{{ block.settings.title | default: "Titre de l'usage" }}</h3>
+            <p>{{ block.settings.description | default: "Description courte de l'usage." }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cas d'usage",
+  "blocks": [
+    {
+      "type": "use_case",
+      "name": "Cas d'usage",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Titre" },
+        { "type": "textarea", "id": "description", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cas d'usage",
+      "blocks": [
+        { "type": "use_case", "settings": { "title": "VOTRE PORTEFEUILLE", "description": "Un accessoire discret pour un essentiel du quotidien." } },
+        { "type": "use_case", "settings": { "title": "VOS CLÉS", "description": "Une solution pratique pour retrouver vos clés plus facilement." } },
+        { "type": "use_case", "settings": { "title": "VOS SACS & BAGAGES", "description": "Voyagez avec une meilleure visibilité sur vos essentiels." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

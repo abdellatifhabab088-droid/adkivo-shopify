@@ -1,0 +1,64 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="{{ 'logo_white.svg' | asset_url }}" alt="TRACEVIA" width="140" height="28">
+        <p>{{ section.settings.brand_description | default: "La technologie qui vous aide à garder vos essentiels à portée de main." }}</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#featured-card" class="footer-link">Notre univers</a></li>
+          <li><a href="#how-it-works" class="footer-link">Comment ça marche</a></li>
+          <li><a href="#brand-story" class="footer-link">À propos</a></li>
+          <li><a href="#faq" class="footer-link">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <ul class="footer-links">
+          <li><a href="{{ routes.policies_url }}" class="footer-link">Politique de confidentialité</a></li>
+          <li><a href="{{ routes.policies_url }}" class="footer-link">Conditions Générales</a></li>
+          <li><a href="{{ routes.page_url: 'contact' }}" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: "%Y" }} TRACEVIA. Tous droits réservés.</p>
+      <div class="social-links">
+        {% if settings.social_facebook_link != blank %}
+          <a href="{{ settings.social_facebook_link }}" target="_blank" class="footer-link">Facebook</a>
+        {% endif %}
+        {% if settings.social_instagram_link != blank %}
+          <a href="{{ settings.social_instagram_link }}" target="_blank" class="footer-link">Instagram</a>
+        {% endif %}
+        {% if settings.social_tiktok_link != blank %}
+          <a href="{{ settings.social_tiktok_link }}" target="_blank" class="footer-link">TikTok</a>
+        {% endif %}
+        {% if settings.social_whatsapp_link != blank %}
+          <a href="{{ settings.social_whatsapp_link }}" target="_blank" class="footer-link">WhatsApp</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Pied de page",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "brand_description",
+      "label": "Description de la marque",
+      "default": "La technologie qui vous aide à garder vos essentiels à portée de main."
+    }
+  ],
+  "presets": [
+    { "name": "Pied de page" }
+  ]
+}
+{% endschema %}

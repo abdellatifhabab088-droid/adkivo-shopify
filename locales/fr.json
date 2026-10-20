@@ -1,0 +1,46 @@
+{
+  "general": {
+    "search": {
+      "search": "Rechercher",
+      "no_results": "Aucun résultat trouvé pour « {{ terms }} »"
+    },
+    "accessibility": {
+      "skip_to_text": "Aller au contenu",
+      "close": "Fermer",
+      "menu": "Menu",
+      "cart": "Panier"
+    }
+  },
+  "sections": {
+    "header": {
+      "menu": "Menu",
+      "cart": "Panier"
+    },
+    "footer": {
+      "contact_us": "Contactez-nous",
+      "all_rights_reserved": "Tous droits réservés",
+      "payment_methods": "Modes de paiement"
+    },
+    "hero": {
+      "headline": "CE QUI COMPTE POUR VOUS MÉRITE D’ÊTRE RETROUVÉ.",
+      "subtext": "Des accessoires intelligents pour garder vos essentiels à portée de main.",
+      "cta": "DÉCOUVRIR TRACEVIA",
+      "compatibility": "Compatible iPhone & Android • Sans abonnement"
+    },
+    "faq": {
+      "title": "DES QUESTIONS ? ON VOUS RÉPOND.",
+      "q1": "Comment fonctionnent les accessoires TRACEVIA ?",
+      "a1": "Les accessoires TRACEVIA utilisent la technologie Bluetooth basse consommation pour se connecter à votre smartphone et vous aider à localiser vos objets.",
+      "q2": "Les trackers sont-ils compatibles avec iPhone et Android ?",
+      "a2": "Oui, nos produits sont conçus pour fonctionner avec les écosystèmes Apple Find My et Google Find Hub (selon le modèle).",
+      "q3": "Faut-il payer un abonnement ?",
+      "a3": "Non, les trackers TRACEVIA fonctionnent sans frais mensuels ni abonnement caché.",
+      "q4": "Comment fonctionne la localisation ?",
+      "a4": "Vous pouvez localiser vos objets directement depuis l'application sur votre téléphone, faire sonner le tracker ou voir sa dernière position connue.",
+      "q5": "Livrez-vous partout au Cameroun ?",
+      "a5": "Nous préparons actuellement notre infrastructure de livraison pour couvrir les principales villes du Cameroun. Les détails seront confirmés prochainement.",
+      "q6": "Quels moyens de paiement sont disponibles ?",
+      "a6": "Nous accepterons plusieurs modes de paiement locaux et internationaux au lancement. Les options finales seront précisées bientôt."
+    }
+  }
+}

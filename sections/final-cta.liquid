@@ -1,0 +1,24 @@
+<section class="final-cta-section">
+  <div class="container final-cta-content">
+    <h2>{{ section.settings.title | default: "NE PERDEZ PLUS DE VUE L’ESSENTIEL." }}</h2>
+    <p>{{ section.settings.subtext | default: "Découvrez un univers d’accessoires intelligents, pensé pour votre quotidien." }}</p>
+    <a href="{{ section.settings.button_link | default: '#featured-card' }}" class="btn btn-accent">
+      {{ section.settings.button_label | default: "DÉCOUVRIR NOTRE UNIVERS" }}
+    </a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Appel à l'action final",
+  "settings": [
+    { "type": "textarea", "id": "title", "label": "Titre", "default": "NE PERDEZ PLUS DE VUE L’ESSENTIEL." },
+    { "type": "textarea", "id": "subtext", "label": "Texte", "default": "Découvrez un univers d’accessoires intelligents, pensé pour votre quotidien." },
+    { "type": "text", "id": "button_label", "label": "Texte du bouton", "default": "DÉCOUVRIR NOTRE UNIVERS" },
+    { "type": "url", "id": "button_link", "label": "Lien du bouton" }
+  ],
+  "presets": [
+    { "name": "Appel à l'action final" }
+  ]
+}
+{% endschema %}

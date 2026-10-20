@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+  {% if settings.favicon != blank %}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+  {% endif %}
+
+  <title>
+    {{ shop.name }}
+    {% if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif %}
+    {% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}
+    {% if template.name == 'product' %} &ndash; {{ product.title }}{% endif %}
+    {% if template.name == 'collection' %} &ndash; {{ collection.title }}{% endif %}
+    {% if template.name == 'blog' %} &ndash; {{ blog.title }}{% endif %}
+    {% if template.name == 'article' %} &ndash; {{ article.title }}{% endif %}
+    {% if page_title %} &ndash; {{ page_title }}{% endif %}
+  </title>
+
+  {{ content_for_header }}
+
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+</head>
+<body class="template-{{ template.name }}">
+
+  <a class="skip-to-content-link" href="#MainContent">
+    Aller au contenu principal
+  </a>
+
+  {% section 'header' %}
+
+  <main id="MainContent" role="main" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'footer' %}
+
+  {{ content_for_footer }}
+</body>
+</html>

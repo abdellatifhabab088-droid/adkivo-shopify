@@ -1,0 +1,43 @@
+<section id="how-it-works" class="how-it-works-section">
+  <div class="container">
+    <div class="how-header">
+      <h2 class="section-title">{{ section.settings.title | default: "LA TECHNOLOGIE. EN TOUTE SIMPLICITÉ." }}</h2>
+    </div>
+    <div class="how-grid">
+      {% for block in section.blocks %}
+        <div class="how-step">
+          <div class="step-number">{{ block.settings.step_number | default: "01" }}</div>
+          <h3>{{ block.settings.title | default: "Titre de l'étape" }}</h3>
+          <p>{{ block.settings.description | default: "Description de l'étape." }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Comment ça marche",
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Étape",
+      "settings": [
+        { "type": "text", "id": "step_number", "label": "Numéro" },
+        { "type": "text", "id": "title", "label": "Titre" },
+        { "type": "textarea", "id": "description", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comment ça marche",
+      "blocks": [
+        { "type": "step", "settings": { "step_number": "01", "title": "ÉQUIPEZ VOS ESSENTIELS", "description": "Choisissez l’accessoire adapté à votre objet." } },
+        { "type": "step", "settings": { "step_number": "02", "title": "CONNECTEZ VOTRE ACCESSOIRE", "description": "Configurez-le avec l’application compatible." } },
+        { "type": "step", "settings": { "step_number": "03", "title": "RETROUVEZ PLUS FACILEMENT", "description": "Utilisez les fonctionnalités de localisation disponibles pour votre appareil." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

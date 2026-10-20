@@ -1,0 +1,59 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="{{ routes.root_url }}" class="header-logo">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 300 | image_tag: alt: shop.name }}
+      {%- else -%}
+        <img src="{{ 'logo_white.svg' | asset_url }}" alt="{{ shop.name }}" width="140" height="28">
+      {%- endif -%}
+    </a>
+
+    <nav class="header-nav">
+      <a href="#featured-card" class="header-nav-link">Notre Univers</a>
+      <a href="#how-it-works" class="header-nav-link">Comment ça marche</a>
+      <a href="#brand-story" class="header-nav-link">À propos</a>
+      <a href="#faq" class="header-nav-link">FAQ</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="{{ routes.cart_url }}" class="header-cart-btn" aria-label="Panier">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+      </a>
+
+      <button type="button" class="header-hamburger" aria-label="Menu mobile">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu-drawer">
+  <div class="mobile-menu-header">
+    <a href="{{ routes.root_url }}">
+      <img src="{{ 'logo_white.svg' | asset_url }}" alt="{{ shop.name }}" width="140" height="28">
+    </a>
+    <button type="button" class="mobile-menu-close" aria-label="Fermer le menu">&times;</button>
+  </div>
+  <div class="mobile-menu-links">
+    <a href="#featured-card" class="mobile-menu-link">Notre Univers</a>
+    <a href="#how-it-works" class="mobile-menu-link">Comment ça marche</a>
+    <a href="#brand-story" class="mobile-menu-link">À propos</a>
+    <a href="#faq" class="mobile-menu-link">FAQ</a>
+    <a href="{{ routes.cart_url }}" class="mobile-menu-link">Panier</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "En-tête",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo en-tête (clair)"
+    }
+  ]
+}
+{% endschema %}

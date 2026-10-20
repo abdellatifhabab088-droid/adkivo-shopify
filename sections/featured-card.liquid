@@ -1,0 +1,86 @@
+<section id="featured-card" class="featured-card-section">
+  <div class="container">
+    <div class="featured-card-grid">
+      <div class="featured-card-image-wrap">
+        {% if section.settings.card_image != blank %}
+          {{ section.settings.card_image | image_url: width: 800 | image_tag: alt: 'Carte de localisation TRACEVIA' }}
+        {% else %}
+          <img src="https://images.unsplash.com/photo-1627389955805-325303db57dd?q=80&w=800&auto=format&fit=crop" alt="Carte TRACEVIA Ultra-fine" width="800" height="600">
+        {% endif %}
+      </div>
+
+      <div class="featured-card-content">
+        <h2>{{ section.settings.title | default: "DISCRÈTE PAR NATURE. INTELLIGENTE PAR CONCEPTION." }}</h2>
+        <p class="section-subtext" style="text-align: left; margin: 0;">
+          {{ section.settings.description | default: "Conçue pour se glisser parfaitement dans n'importe quel portefeuille sans ajouter de volume, notre carte intelligente vous offre une sérénité totale." }}
+        </p>
+
+        <div class="specs-list">
+          <div class="spec-item">
+            <span class="spec-icon">✓</span>
+            <span>Format ultra-fin : 1.8 mm d'épaisseur</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-icon">✓</span>
+            <span>Sans aucun abonnement mensuel</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-icon">✓</span>
+            <span>Compatible Apple Find My & Google Find Hub</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-icon">✓</span>
+            <span>Résistance à l'eau et à la poussière IP68</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 32px;">
+          <a href="{{ section.settings.button_link | default: '#how-it-works' }}" class="btn btn-accent">
+            {{ section.settings.button_label | default: "EN SAVOIR PLUS" }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Carte de Localisation",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "card_image",
+      "label": "Image de la carte"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Titre",
+      "default": "DISCRÈTE PAR NATURE. INTELLIGENTE PAR CONCEPTION."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Conçue pour se glisser parfaitement dans n'importe quel portefeuille sans ajouter de volume, notre carte intelligente vous offre une sérénité totale."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texte du bouton",
+      "default": "EN SAVOIR PLUS"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien du bouton"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Carte de Localisation"
+    }
+  ]
+}
+{% endschema %}

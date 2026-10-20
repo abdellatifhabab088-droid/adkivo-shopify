@@ -1,0 +1,76 @@
+<section class="hero-section">
+  <div class="hero-background">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 2000 | image_tag: loading: 'eager', alt: 'TRACEVIA Hero' }}
+    {% else %}
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000&auto=format&fit=crop" alt="TRACEVIA African Lifestyle Hero" loading="eager" width="2000" height="1200">
+    {% endif %}
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+    <h1 class="hero-headline">
+      {{ section.settings.headline | default: "CE QUI COMPTE POUR VOUS MÉRITE D’ÊTRE RETROUVÉ." }}
+    </h1>
+    <p class="hero-subtext">
+      {{ section.settings.subtext | default: "Des accessoires intelligents pour garder vos essentiels à portée de main." }}
+    </p>
+
+    <div class="hero-cta-wrapper">
+      <a href="{{ section.settings.cta_link | default: '#featured-card' }}" class="btn btn-accent">
+        {{ section.settings.cta_label | default: "DÉCOUVRIR TRACEVIA" }}
+      </a>
+    </div>
+
+    <div class="hero-compatibility">
+      {{ section.settings.compatibility_text | default: "Compatible iPhone & Android • Sans abonnement" }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bannière Héro",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image de fond lifestyle"
+    },
+    {
+      "type": "textarea",
+      "id": "headline",
+      "label": "Titre principal",
+      "default": "CE QUI COMPTE POUR VOUS MÉRITE D’ÊTRE RETROUVÉ."
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Texte de soutien",
+      "default": "Des accessoires intelligents pour garder vos essentiels à portée de main."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Texte du bouton",
+      "default": "DÉCOUVRIR TRACEVIA"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Lien du bouton"
+    },
+    {
+      "type": "text",
+      "id": "compatibility_text",
+      "label": "Texte de compatibilité",
+      "default": "Compatible iPhone & Android • Sans abonnement"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bannière Héro"
+    }
+  ]
+}
+{% endschema %}

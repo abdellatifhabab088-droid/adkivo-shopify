@@ -1,0 +1,35 @@
+<section class="brand-promise-section">
+  <div class="container">
+    <h2 class="section-title">
+      {{ section.settings.title | default: "UNE PETITE TECHNOLOGIE. UNE GRANDE TRANQUILLITÉ." }}
+    </h2>
+    <p class="section-subtext">
+      {{ section.settings.subtext | default: "Portefeuille, clés, sac ou bagage : découvrez des solutions pensées pour vous aider à retrouver les objets qui comptent au quotidien." }}
+    </p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Promesse de Marque",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Titre",
+      "default": "UNE PETITE TECHNOLOGIE. UNE GRANDE TRANQUILLITÉ."
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Sous-titre",
+      "default": "Portefeuille, clés, sac ou bagage : découvrez des solutions pensées pour vous aider à retrouver les objets qui comptent au quotidien."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promesse de Marque"
+    }
+  ]
+}
+{% endschema %}

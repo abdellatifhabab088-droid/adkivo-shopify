@@ -1,0 +1,31 @@
+<section id="brand-story" class="brand-story-section">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-content">
+        <h2>{{ section.settings.title | default: "TRACEVIA. PENSÉ POUR VOTRE QUOTIDIEN." }}</h2>
+        <p>{{ section.settings.body | default: "Nous croyons que la technologie doit simplifier la vie, pas la compliquer. TRACEVIA est née d’une ambition simple : rendre les accessoires intelligents plus accessibles, plus pratiques et mieux adaptés à notre quotidien. Parce que les objets qui nous accompagnent chaque jour méritent toute notre attention." }}</p>
+      </div>
+      <div class="story-image">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 800 | image_tag: alt: 'Lifestyle TRACEVIA' }}
+        {% else %}
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" alt="Lifestyle TRACEVIA" width="800" height="600">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Histoire de la marque",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image de la marque" },
+    { "type": "textarea", "id": "title", "label": "Titre", "default": "TRACEVIA. PENSÉ POUR VOTRE QUOTIDIEN." },
+    { "type": "textarea", "id": "body", "label": "Texte", "default": "Nous croyons que la technologie doit simplifier la vie, pas la compliquer. TRACEVIA est née d’une ambition simple : rendre les accessoires intelligents plus accessibles, plus pratiques et mieux adaptés à notre quotidien. Parce que les objets qui nous accompagnent chaque jour méritent toute notre attention." }
+  ],
+  "presets": [
+    { "name": "Histoire de la marque" }
+  ]
+}
+{% endschema %}

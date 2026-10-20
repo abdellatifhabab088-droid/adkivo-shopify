@@ -1,0 +1,49 @@
+<section id="faq" class="faq-section">
+  <div class="container">
+    <div class="faq-header">
+      <h2 class="section-title">{{ section.settings.title | default: "DES QUESTIONS ? ON VOUS RÉPOND." }}</h2>
+    </div>
+    <div class="faq-list">
+      {% for block in section.blocks %}
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>{{ block.settings.question }}</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>{{ block.settings.answer }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "Question FAQ",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "textarea", "id": "answer", "label": "Réponse" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        { "type": "faq_item", "settings": { "question": "Comment fonctionnent les accessoires TRACEVIA ?", "answer": "Les accessoires TRACEVIA utilisent la technologie Bluetooth basse consommation pour se connecter à votre smartphone et vous aider à localiser vos objets." } },
+        { "type": "faq_item", "settings": { "question": "Les trackers sont-ils compatibles avec iPhone et Android ?", "answer": "Oui, nos produits sont conçus pour fonctionner avec les écosystèmes Apple Find My et Google Find Hub (selon le modèle)." } },
+        { "type": "faq_item", "settings": { "question": "Faut-il payer un abonnement ?", "answer": "Non, les trackers TRACEVIA fonctionnent sans frais mensuels ni abonnement caché." } },
+        { "type": "faq_item", "settings": { "question": "Comment fonctionne la localisation ?", "answer": "Vous pouvez localiser vos objets directement depuis l'application sur votre téléphone, faire sonner le tracker ou voir sa dernière position connue." } },
+        { "type": "faq_item", "settings": { "question": "Livrez-vous partout au Cameroun ?", "answer": "Nous préparons actuellement notre infrastructure de livraison pour couvrir les principales villes du Cameroun. Les détails seront confirmés prochainement." } },
+        { "type": "faq_item", "settings": { "question": "Quels moyens de paiement sont disponibles ?", "answer": "Nous accepterons plusieurs modes de paiement locaux et internationaux au lancement. Les options finales seront précisées bientôt." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
