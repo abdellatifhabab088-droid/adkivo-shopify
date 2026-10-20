@@ -4,6 +4,38 @@
       "type": "header",
       "settings": {}
     },
+    "hero": {
+      "type": "hero-cinematic",
+      "settings": {}
+    },
+    "brand_promise": {
+      "type": "brand-promise",
+      "settings": {}
+    },
+    "featured_card": {
+      "type": "featured-card",
+      "settings": {}
+    },
+    "use_cases": {
+      "type": "use-cases",
+      "settings": {}
+    },
+    "how_it_works": {
+      "type": "how-it-works",
+      "settings": {}
+    },
+    "brand_story": {
+      "type": "brand-story",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    },
+    "final_cta": {
+      "type": "final-cta",
+      "settings": {}
+    },
     "footer": {
       "type": "footer",
       "settings": {}
@@ -11,6 +43,14 @@
   },
   "order": [
     "header",
+    "hero",
+    "brand_promise",
+    "featured_card",
+    "use_cases",
+    "how_it_works",
+    "brand_story",
+    "faq",
+    "final_cta",
     "footer"
   ]
 }
