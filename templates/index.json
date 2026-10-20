@@ -1,7 +1,7 @@
 {
   "sections": {
     "header": {
-      "type": "header",
+      "type": "tracevia-header",
       "settings": {}
     },
     "hero": {
@@ -37,7 +37,7 @@
       "settings": {}
     },
     "footer": {
-      "type": "footer",
+      "type": "tracevia-footer",
       "settings": {}
     }
   },
