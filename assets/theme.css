@@ -119,6 +119,22 @@ img {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
+/* Product Price Custom Styling */
+.price__regular .price-item--regular,
+.price__sale .price-item--sale,
+.price-item--last {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  color: #111111 !important;
+}
+
+.price__sale .price-item--regular {
+  font-size: 18px !important;
+  color: #888888 !important;
+  text-decoration: line-through !important;
+  margin-left: 8px !important;
+}
+
 /* Header */
 .site-header {
   position: fixed;
